@@ -1,0 +1,16 @@
+{
+  "localeCode": "en-US",
+  "authors": [ "LeCloutPanda" ],
+  "messages": {
+    "Settings.dev.lecloutpanda.Toggles": "Toggles",
+    "Settings.dev.lecloutpanda.Toggles.Breadcrumb": "Toggles",
+
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton": "Inventory Save Avatar Button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton.Description": "Toggle generation of inventory save avatar button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetItemLinkButton": "Get Item Link Button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetItemLinkButton.Description": "Toggle generation of get item link button",
+
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegration": "Wiki integration",
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegration.Description": "Toggle generation of wiki shortcut on components and protoflux tool context menu"
+  }
+}
