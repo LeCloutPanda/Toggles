@@ -111,7 +111,7 @@ public class Plugin : BasePlugin
     {
         [HarmonyPatch("OnItemSelected")]
         [HarmonyPostfix]
-        public static void Postfix(InventoryBrowser __instance, SyncRef<Button> ____addCurrentAvatar, SyncRef<Button> ____copyLink) 
+        public static void Postfix(SyncRef<Button> ____addCurrentAvatar, SyncRef<Button> ____copyLink) 
         {
             //
             try 

@@ -12,3 +12,7 @@ Create an issue in the [issues](https://github.com/LeCloutPanda/Toggles/issues) 
 3. Extract the ZIP and copy the `plugins` folder to your BepInEx folder in your Resonite installation directory:
    - **Default location:** `C:\Program Files (x86)\Steam\steamapps\common\Resonite\BepInEx\`
 4. Start the game. If you want to verify that the mod is working you can check your BepInEx logs.
+
+## Credits 
+- Wiki integrations by (Arti)[https://github.com/art0007i]
+- Inventory button patches by Me
