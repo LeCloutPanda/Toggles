@@ -15,3 +15,6 @@ A clear description of what you want to happen when toggling.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
+
+**Requester/s**
+Who is asking for this(Let's me know who to ping/mention in patch notes)
