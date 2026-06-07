@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "LeCloutPanda"
 name = "Toggles" 
-versionNumber = "1.0.0"
+versionNumber = "1.1.0"
 description = "Add toggles for features that really should have them."
 websiteUrl = "https://github.com/lecloutpanda/Toggles"
 containsNsfwContent = false
@@ -18,6 +18,15 @@ readme = "./README.md"
 outdir = "./build"
 
 [[build.copy]]
+source = "./CHANGELOG.md"
+target = "/"
+
+[[build.copy]]
+source = "./LICENSE.md"
+target = "/"
+
+
+[[build.copy]]
 source = "./Toggles/bin/Release/Toggles.dll"
 target = "plugins/Toggles/"
 
@@ -28,14 +37,6 @@ target = "plugins/Toggles/"
 [[build.copy]]
 source = "./Toggles/Locale"
 target = "plugins/Toggles/Locale"
-
-# [[build.copy]]
-# source = "./CHANGELOG.md"
-# target = "/"
-
-[[build.copy]]
-source = "./LICENSE.md"
-target = "/"
 
 [publish]
 repository = "https://thunderstore.io"

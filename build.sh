@@ -1,0 +1,1 @@
+dotnet build ./Toggles -c Release && tcli build

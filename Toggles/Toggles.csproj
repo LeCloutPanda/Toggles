@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>LeCloutPanda, art0007i</Authors>
     <TargetFramework>net10.0</TargetFramework>
     <RepositoryUrl>https://github.com/lecloutpanda/Toggles</RepositoryUrl>
@@ -40,6 +40,8 @@
     <Reference Include="Elements.Assets" HintPath="$(GamePath)Elements.Assets.dll" Private="false" />
     <Reference Include="ReferenceFinderWizard" HintPath="$(GamePath)ReferenceFinderWizard.dll" Private="false" />
     <Reference Include="SkyFrost.Base.Models" HintPath="$(GamePath)SkyFrost.Base.Models.dll" Private="false" />
+    <Reference Include="SkyFrost.Base" HintPath="$(GamePath)SkyFrost.Base.dll" Private="false" />
+    <Reference Include="Renderite.Shared" HintPath="$(GamePath)Renderite.Shared.dll" Private="false" />
   </ItemGroup>
 
   <!-- Post-build copy to game plugins folder -->

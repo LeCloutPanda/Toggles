@@ -5,12 +5,27 @@
     "Settings.dev.lecloutpanda.Toggles": "Toggles",
     "Settings.dev.lecloutpanda.Toggles.Breadcrumb": "Toggles",
 
-    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton": "Inventory Save Avatar Button",
-    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton.Description": "Toggle generation of inventory save avatar button",
-    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetItemLinkButton": "Get Item Link Button",
-    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetItemLinkButton.Description": "Toggle generation of get item link button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton": "'Save Avatar' Button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton.Description": "Toggle generation of 'Save Avatar' button in inventory",
 
-    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegration": "Wiki integration",
-    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegration.Description": "Toggle generation of wiki shortcut on components and protoflux tool context menu"
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetUrlButton": "'Get Url' Button",
+    "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetUrlButton.Description": "Toggle generation of 'Get Url' button in inventory",
+    
+    "Settings.dev.lecloutpanda.Toggles.ProtofluxTool.ToggleOverviewButton": "Protoflux Overview button",
+    "Settings.dev.lecloutpanda.Toggles.ProtofluxTool.ToggleOverviewButton.Description": "Toggle generation of 'Overview' context menu button on protoflux tools",
+    
+    "Settings.dev.lecloutpanda.Toggles.DevTool.ToggleGizmoSnappingButton": "Gizmo Snapping Button",
+    "Settings.dev.lecloutpanda.Toggles.DevTool.ToggleGizmoSnappingButton.Description": "Toggle generation of a 'Gizmo Snapping' context menu button in the 'Gizmo Options' menu on a Dev Tool",
+    "Settings.dev.lecloutpanda.Toggles.DevTool.DefaultGizmoSnappingValue": "Default Gizmo Snapping Value",
+    "Settings.dev.lecloutpanda.Toggles.DevTool.DefaultGizmoSnappingValue.Description": "Default value for 'Gizmo Snapping'. <i><b>his value will change when toggling into context menu</b></i>",
+    "Settings.dev.lecloutpanda.Toggles.DevTool.GizmoSnapping": "Toggle Gizmo Snapping",
+    
+    "Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton": "Ask To Join Button",
+    "Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton.Description": "Toggle Visibility of 'Ask To Join' button",
+    
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector": "Wiki Integration Inspector",
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector.Description": "Toggle 'Wiki Hyperlink' button for components in inspectors",
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux": "Wiki Integration Protoflux",
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux.Description": "Toggle 'Wiki Hyperlink' button for the protoflux tool context menu item"
   }
 }
