@@ -14,5 +14,6 @@ Create an issue in the [issues](https://github.com/LeCloutPanda/Toggles/issues) 
 4. Start the game. If you want to verify that the mod is working you can check your BepInEx logs.
 
 ## Credits 
+- Base patches by [LeCloutPanda](https://github.com/lecloutpanda)
 - Wiki integrations by [art0007i](https://github.com/art0007i)
-- Inventory button patches by Me
+- Patch cleanups/reworks by [NepuShiro](https://github.com/NepuShiro)

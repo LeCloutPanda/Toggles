@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -120,7 +118,7 @@ public class Plugin : BasePlugin
         }
     }
 
-    /// Patch by (Panda)[https://github.com/lecloutpanda]
+    /// Patch by (Panda)[https://github.com/lecloutpanda], reworked by [NepuShiro](https://github.com/NepuShiro)
     /// Patch inventory browser to remove buttons via toggles
     [HarmonyPatch(typeof(InventoryBrowser))]
     public static class InventoryBrowserPatch
@@ -148,7 +146,7 @@ public class Plugin : BasePlugin
         }
     }
 
-    // Fixes issue #1 (https://github.com/LeCloutPanda/Toggles/issues/1)
+    // Fixes issue #1 (https://github.com/LeCloutPanda/Toggles/issues/1), reworked by [NepuShiro](https://github.com/NepuShiro)
     [HarmonyPatch(typeof(ProtoFluxTool), nameof(ProtoFluxTool.GenerateMenuItems))]
     class HideOverviewPatch
     {
@@ -193,7 +191,7 @@ public class Plugin : BasePlugin
         }
     }
 
-    // Fixes issue #2 https://github.com/LeCloutPanda/Toggles/issues/2 
+    // Fixes issue #2 https://github.com/LeCloutPanda/Toggles/issues/2, reworked by [NepuShiro](https://github.com/NepuShiro)
     [HarmonyPatch]
     public static class DevToolPatches
     {
