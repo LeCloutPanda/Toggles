@@ -26,6 +26,9 @@
     "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector": "Wiki Integration Inspector",
     "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector.Description": "Toggle 'Wiki Hyperlink' button for components in inspectors",
     "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux": "Wiki Integration Protoflux",
-    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux.Description": "Toggle 'Wiki Hyperlink' button for the protoflux tool context menu item"
+    "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux.Description": "Toggle 'Wiki Hyperlink' button for the protoflux tool context menu item",
+
+    "Settings.dev.lecloutpanda.Toggles.Inspector.SlotTagInheritance": "Tag Inheritance",
+    "Settings.dev.lecloutpanda.Toggles.Inspector.SlotTagInheritance.Description": "Toggle 'Tag Inheritance' when creating a child slot via the inspector"
   }
 }

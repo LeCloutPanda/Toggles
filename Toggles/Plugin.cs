@@ -29,6 +29,9 @@ public class Plugin : BasePlugin
     private static ConfigEntry<bool> CONTACT_ASK_TO_JOIN_BUTTON = null!;
     private static ConfigEntry<bool> WIKI_INTEGRATION_INSPECTOR = null!;
     private static ConfigEntry<bool> WIKI_INTEGRATION_PROTOFLUX = null!;
+    private static ConfigEntry<bool> SLOT_TAG_INHERITANCE = null!;
+    private static ConfigEntry<bool> MAYBE_JUMP_LEFT = null!;
+    private static ConfigEntry<bool> MAYBE_JUMP_RIGHT = null!;
 
     public override void Load()
     {
@@ -43,6 +46,9 @@ public class Plugin : BasePlugin
         CONTACT_ASK_TO_JOIN_BUTTON = Config.Bind("Contacts", "Ask To Join Button", true, new ConfigDescription("Toggle Visibility of 'Ask To Join' button", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton", "Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton.Description")));
         WIKI_INTEGRATION_INSPECTOR = Config.Bind("Misc", "Wiki Integration Inspector", true, new ConfigDescription("Toggle 'Wiki Hyperlink' button for components in inspectors", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector", "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationInspector.Description")));
         WIKI_INTEGRATION_PROTOFLUX = Config.Bind("Misc", "Wiki Integration Protoflux", true, new ConfigDescription("Toggle 'Wiki Hyperlink' button for the protoflux tool context menu item", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux", "Settings.dev.lecloutpanda.Toggles.Misc.ToggleWikiIntegrationProtoflux.Description")));
+        SLOT_TAG_INHERITANCE = Config.Bind("Inspector", "Tag Inheritance", true, new ConfigDescription("Toggle 'Tag Inheritance' when creating a child slot via the inspector", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Inspector.SlotTagInheritance", "Settings.dev.lecloutpanda.Toggles.Inspector.SlotTagInheritance.Description")));
+        MAYBE_JUMP_LEFT = Config.Bind("Controls", "Maybe Jump Left", true, new ConfigDescription("TEMP DESCRIPTOR", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft", "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft.Description")));
+        MAYBE_JUMP_RIGHT = Config.Bind("Controls", "Maybe Jump Right", true, new ConfigDescription("TEMP DESCRIPTOR", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight", "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight.Description")));
 
         DevToolPatches.InitSubs();
     }
@@ -313,21 +319,80 @@ public class Plugin : BasePlugin
     }
 
     // Fixes issue #4 https://github.com/LeCloutPanda/Toggles/issues/4
-    [HarmonyPatch]
+    [HarmonyPatch(typeof(ContactItem), nameof(ContactItem.Update), new[] { typeof(Contact), typeof(ContactData) })]
     public static class ContactsPagePatches
     {
-        [HarmonyPatch(typeof(ContactItem), nameof(ContactItem.Update), new[] { typeof(Contact), typeof(ContactData) })]
-        class ContactItemUpdatePatch
+        public static void Postfix(Contact contact, ContactData data, SyncRef<Button> ____joinButton)
         {
-            public static void Postfix(Contact contact, ContactData data, SyncRef<Button> ____joinButton)
+            if (CONTACT_ASK_TO_JOIN_BUTTON.Value) return;
+            if (!contact.IsAccepted || contact.ContactStatus != ContactStatus.Accepted) return;
+            if (data == null) return;
+            if (data.CurrentSessionInfo != null) return;
+            if (data.CurrentStatus.OnlineStatus.GetValueOrDefault() == OnlineStatus.Offline) return;
+            ____joinButton?.Target?.Slot.ActiveSelf = false;
+        }
+    }
+
+    // Fixes issue #3 https://github.com/LeCloutPanda/mToggles/issues/3, patch by [Gyztor](https://github.com/Gyztor)
+    [HarmonyPatch(typeof(DualControllerBindingGenerator), "BindJump")]
+    static class NoJumpPatch
+    {
+        [HarmonyPrefix]
+        private static bool BindJumpPrefix(InputGroup group, IDualBindingController left, IDualBindingController right, ref AnyInput __result)
+        {
+            AnyInput anyInput = new AnyInput();
+
+            if (MAYBE_JUMP_LEFT.Value)
             {
-                // have to figure out headless' that are not focused on session/s
-                if (CONTACT_ASK_TO_JOIN_BUTTON.Value) return;
-                if (!contact.IsAccepted || contact.ContactStatus != ContactStatus.Accepted) return;
-                if (data == null) return;
-                if (data.CurrentSessionInfo != null) return;
-                if (data.CurrentStatus.OnlineStatus.GetValueOrDefault() == OnlineStatus.Offline) return;
-                ____joinButton?.Target?.Slot.ActiveSelf = false;
+                left?.BindNodeActions(group, anyInput, "Jump");
+            }
+            if (MAYBE_JUMP_RIGHT.Value)
+            {
+                right?.BindNodeActions(group, anyInput, "Jump");
+            }
+
+            __result = anyInput;
+            return false;
+        }
+    }
+
+    // Fixes issue #6 https://github.com/LeCloutPanda/Toggles/issues/6
+    [HarmonyPatch]
+    public static class InspectorPatches
+    {
+        private static Slot ComponentViewTarget = null;
+        private static ButtonEventData EventData;
+
+        [HarmonyPatch(typeof(SceneInspector), "OnAddChildPressed")]
+        [HarmonyPrefix]
+        public static void AddChildPostfix(SyncRef<Slot> ___ComponentView, IButton button, ButtonEventData eventData)
+        {
+            ComponentViewTarget = ___ComponentView;
+            EventData = eventData;
+        }
+
+        [HarmonyPatch(typeof(Slot), nameof(Slot.AddSlot))]
+        [HarmonyPostfix]
+        public static void AddSlotPostfix(Slot __result)
+        {
+            if (SLOT_TAG_INHERITANCE.Value) return;
+
+            try 
+            {
+                if (__result == null || __result.IsDestroying || __result.IsDestroyed) return;
+                if (EventData.source == null) return;
+                if (!EventData.source.IsUnderLocalUser) return;
+                if (ComponentViewTarget == null || ComponentViewTarget.IsDestroying || ComponentViewTarget.IsDestroyed) return;
+                if (__result.Name.Contains(ComponentViewTarget.Name) == false) return;
+                if (__result.Tag != ComponentViewTarget.Tag) return;
+                if (__result.Parent == null || __result.Parent.IsDestroying || __result.Parent.IsDestroyed) return;
+                if (__result.Parent != ComponentViewTarget) return;
+                __result.Tag = null; 
+                ComponentViewTarget = null;
+            } 
+            catch(Exception ex) 
+            {
+                Log.LogMessage("Failed to remove inherited tag for reason: " + ex);
             }
         }
     }
