@@ -32,7 +32,7 @@
     "Settings.dev.lecloutpanda.Toggles.Inspector.SlotTagInheritance.Description": "Toggle 'Tag Inheritance' when creating a child slot via the inspector",
 
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft": "Left Jump Enabled",
-    "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft.Description": "Toggles the jump on the left hand. Requires a restart of the game to change".
+    "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft.Description": "Toggles the jump on the left hand. Requires a restart of the game to change",
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight": "Right Jump Enabled",
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight.Description": "Toggles the jump on the right hand. Requires a restart of the game to change"
   }
