@@ -34,6 +34,11 @@
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft": "Left Jump Enabled",
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpLeft.Description": "Toggles the jump on the left hand. Requires a restart of the game to change",
     "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight": "Right Jump Enabled",
-    "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight.Description": "Toggles the jump on the right hand. Requires a restart of the game to change"
+    "Settings.dev.lecloutpanda.Toggles.Controls.MaybeJumpRight.Description": "Toggles the jump on the right hand. Requires a restart of the game to change",
+
+    "Settings.dev.lecloutpanda.Toggles.Haptics.Dash": "Dash Haptics Enabled <sup>(Experimental)</sup>",
+    "Settings.dev.lecloutpanda.Toggles.Haptics.Dash.Description": "Toggles haptics when interacting with the Dash",
+    "Settings.dev.lecloutpanda.Toggles.Haptics.World": "World Haptics Enabled <sup>(Experimental)</sup>",
+    "Settings.dev.lecloutpanda.Toggles.Haptics.World.Description": "Toggle haptics when interacting with stuff in World"
   }
 }

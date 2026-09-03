@@ -3,6 +3,16 @@
 
 A [Resonite](https://resonite.com/) mod that add toggles for features that really should have them.
 
+## List of toggles implemeneted
+- ``Avatar Save`` and ``Get Url`` buttons in inventory screen
+- The generation of the ``Overview Mode`` context menu button when holding a protoflux tool
+- ``Gizmo Snapping`` via a context menu button injected under the ``Gizmo Options`` menu
+- ``Ask to join`` button in the contacts page
+- Seperate ``Wiki Integration`` buttons for both the ``Inspector`` and ``Protoflux Tool``
+- ``Slot Tag Inheritance`` when creating a child slot via the inspector when the parent has a tag
+- Toggle for ``Jump Bindings`` on either ``Left`` or ``Right`` controllers 
+- ``Controller Haptics`` for both ``Dash`` and ``World`` interactions (experimental)
+
 ## Missing features?
 Create an issue in the [issues](https://github.com/LeCloutPanda/Toggles/issues) tab or ping me(@lecloutpanda) in the [FrooxEngine Modding discord](https://discord.gg/vCDJK9xyvm), if possible please provide a basic summary of what you want to be added, what the vanilla feature does and how you'd like it to be added as a toggle as this will make it easier for me to add your suggestion.
 
