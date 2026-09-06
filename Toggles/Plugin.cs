@@ -16,6 +16,7 @@ public class Plugin : BasePlugin
     public static ConfigEntry<bool> INVENTORY_SAVE_AVATAR_BUTTON = null!;
     public static ConfigEntry<bool> INVENTORY_GET_URL_BUTTON = null!;
     public static ConfigEntry<bool> PROTOFLUX_OVERVIEW_BUTTON = null!;
+    public static ConfigEntry<bool> PROTOFLUX_PACK_IN_PLACE_BUTTON = null!;
     public static ConfigEntry<bool> DEVTOOL_GIZMOSNAPPING_BUTTON = null!;
     public static ConfigEntry<bool> DEVTOOL_GIZMOSNAPPING_VALUE = null!;
     public static ConfigEntry<bool> CONTACT_ASK_TO_JOIN_BUTTON = null!;
@@ -35,6 +36,7 @@ public class Plugin : BasePlugin
         INVENTORY_SAVE_AVATAR_BUTTON = Config.Bind("Inventory", "Inventory Save Avatar Button", true, new ConfigDescription("Toggle generation of 'Save Avatar' button in inventory", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton", "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleSaveAvatarButton.Description")));
         INVENTORY_GET_URL_BUTTON = Config.Bind("Inventory", "Inventory Get Item Url Button", true, new ConfigDescription("Toggle generation of 'Get Url' button in inventory", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetUrlButton", "Settings.dev.lecloutpanda.Toggles.Inventory.ToggleGetUrlButton.Description")));
         PROTOFLUX_OVERVIEW_BUTTON = Config.Bind("Protoflux Tool", "Overview Button", true, new ConfigDescription("Toggle generation of 'Overview' context menu button on protoflux tools", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.ProtofluxTool.ToggleOverviewButton", "Settings.dev.lecloutpanda.Toggles.ProtofluxTool.ToggleOverviewButton.Description")));
+        PROTOFLUX_PACK_IN_PLACE_BUTTON = Config.Bind("Protoflux Tool", "Pack In Place Button", true, new ConfigDescription("Toggle generation of 'Pack In Place' context menu button on protoflux tools", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.ProtofluxTool.TogglePackInPlace", "Settings.dev.lecloutpanda.Toggles.ProtofluxTool.TogglePackInPlace.Description")));
         DEVTOOL_GIZMOSNAPPING_BUTTON = Config.Bind("Dev Tool", "Gizmo Snapping Button", true, new ConfigDescription("Toggle generation of a 'Gizmo Snapping' context menu button in the 'Gizmo Options' menu on a Dev Tool", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.DevTool.ToggleGizmoSnappingButton", "Settings.dev.lecloutpanda.Toggles.DevTool.ToggleGizmoSnappingButton.Description")));
         DEVTOOL_GIZMOSNAPPING_VALUE = Config.Bind("Dev Tool", "Default Gizmo Snapping Value", true, new ConfigDescription("Default value for 'Gizmo Snapping'", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.DevTool.DefaultGizmoSnappingValue", "Settings.dev.lecloutpanda.Toggles.DevTool.DefaultGizmoSnappingValue.Description")));
         CONTACT_ASK_TO_JOIN_BUTTON = Config.Bind("Contacts", "Ask To Join Button", true, new ConfigDescription("Toggle Visibility of 'Ask To Join' button", null, new ConfigLocale("Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton", "Settings.dev.lecloutpanda.Toggles.Contacts.ToggleAskToJoinButton.Description")));

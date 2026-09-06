@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "LeCloutPanda"
 name = "Toggles" 
-versionNumber = "1.3.0"
+versionNumber = "1.4.0"
 description = "Add toggles for features that really should have them."
 websiteUrl = "https://github.com/lecloutpanda/Toggles"
 containsNsfwContent = false
